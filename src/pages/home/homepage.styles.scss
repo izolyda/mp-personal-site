@@ -1,0 +1,17 @@
+.navbar{
+	background-color: #352B54;	
+}
+
+.brand {
+	color: white !important;
+	font-weight: bolder;
+	font-family: 'Roboto', sans-serif;
+}
+
+.nav-link{
+	color: white !important;
+	
+	&:hover{
+		color: #5c5655 !important;
+	}
+}
