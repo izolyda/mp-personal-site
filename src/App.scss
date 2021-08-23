@@ -1,4 +1,4 @@
-@import "~bootstrap/scss/bootstrap";
+@import "~bootstrap/scss/bootstrap.scss";
 @import "custom";
 
 .App {
@@ -25,6 +25,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+
 }
 
 .App-link {
@@ -39,3 +40,14 @@
     transform: rotate(360deg);
   }
 }
+
+/*.navbar{
+  visibility: hidden;
+  @media(max-width: 40rem){
+    visibility: visible;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+  }
+}*/

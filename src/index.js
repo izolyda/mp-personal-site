@@ -3,13 +3,20 @@
 // import Popper from 'popper.js';
 // import 'bootstrap/dist/js/bootstrap.bundle.min';
 
+
+
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+import 'jquery/dist/jquery.min.js';
+import 'bootstrap/dist/js/bootstrap.min.js';
+import "./assets/font-awesome-4.7.0/css/font-awesome.min.css";
+
+
 import './index.css';
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
-
 
 import {store, persistor} from './redux/store.js';
 import { BrowserRouter } from 'react-router-dom';
