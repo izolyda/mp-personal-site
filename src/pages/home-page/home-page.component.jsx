@@ -1,11 +1,24 @@
 import React from 'react';
 import './home-page.styles.scss';
 
+import Jumbotron from '../../components/jumbotron/jumbotron.component.jsx';
+import Technologies from '../../components/technologies/technologies.component.jsx';
+import Footer from '../../components/footer/footer.component.jsx';
+
 
 const HomePage = () => (
-								<div>
-									<h1> HOME PAGE </h1>
-								</div>
+	<div>
+			<div>
+				<Jumbotron/>
+			</div>
+			<div>
+				<Technologies/>
+			</div>
+			<div>
+				<Footer/>
+			</div>
+	</div>
+								
 );
 
 

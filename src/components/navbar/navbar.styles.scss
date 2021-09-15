@@ -1,5 +1,10 @@
 .navbar{
-	background-color: #4B0082;
+	background-color: rgba(0,0,0, 0.7);
+	position:  absolute;
+	top: 0; left: 0; right: 0;
+	/*@media(max-width: 40rem){
+		background-color: rgba(75, 0, 130, 0.7);
+	}*/
 }
 
 .navbar-brand{
@@ -17,4 +22,9 @@
 			@media(max-width: 40rem){
 				visibility: hidden;
 			}
+}
+
+
+.nav-item{
+    text-align: right;
 }

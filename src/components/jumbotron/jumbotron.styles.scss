@@ -1,0 +1,17 @@
+.profile-pic{
+	width: 10rem;
+	height:  10rem;
+	border-radius: 50%;
+	object-fit: cover;
+	object-position: top;
+	position: relative;
+	margin-top: 2rem;
+}
+
+.jumbotron{
+    top:0;
+    width: 100%;
+    height: 30rem;
+	background-image: linear-gradient(to right, rgba(75, 0, 130, 1), rgba(75, 0, 130, .2));
+	z-index: -1;
+}

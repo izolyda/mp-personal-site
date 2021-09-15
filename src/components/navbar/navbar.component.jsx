@@ -1,6 +1,6 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { createStructuredSelector } from 'reselect';
+// import { connect } from 'react-redux';
+// import { createStructuredSelector } from 'reselect';
 
 
 import { ReactComponent as Logo } from '../../assets/logo.svg';

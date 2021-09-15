@@ -1,0 +1,9 @@
+.footer {
+   display: flex;
+   bottom:0;
+   width:100%;
+   height:6rem;   /* Height of the footer */
+   background-image: linear-gradient(to left, rgba(75, 0, 130, 1), rgba(75, 0, 130, .2));
+   font-size: 1rem;
+   color: white;
+}
