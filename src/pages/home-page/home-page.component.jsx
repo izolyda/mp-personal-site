@@ -5,6 +5,8 @@ import Jumbotron from '../../components/jumbotron/jumbotron.component.jsx';
 import Technologies from '../../components/technologies/technologies.component.jsx';
 import Footer from '../../components/footer/footer.component.jsx';
 
+import AlternateTimeline from '../../components/timeline/timeline.component.jsx';
+
 
 const HomePage = () => (
 	<div>
@@ -13,6 +15,9 @@ const HomePage = () => (
 			</div>
 			<div>
 				<Technologies/>
+			</div>
+			<div>
+				<AlternateTimeline/>
 			</div>
 			<div>
 				<Footer/>

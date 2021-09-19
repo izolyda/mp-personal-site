@@ -26,7 +26,7 @@ const Navbar = () => {
 		    <div className="navbar-nav ml-auto mr-0">
 		      <Link className="nav-item nav-link active" to="/">Home <span className="sr-only">(current)</span></Link>
 		      <Link className="nav-item nav-link" to="/about">About</Link>
-		      <Link className="nav-item nav-link" to="/testimonials">Testimonials</Link>
+		      <Link className="nav-item nav-link" to="/imgenerator">Image Generator</Link>
 		      <Link className="nav-item nav-link" to="/hobbies">Hobbies</Link>
 		      <Link className="nav-item nav-link" to="/contacts">Contacts</Link>
 		    </div>

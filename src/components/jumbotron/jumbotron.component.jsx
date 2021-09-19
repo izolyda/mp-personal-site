@@ -18,10 +18,10 @@ const Jumbotron = () => {
 		
 
   		<h1 className="display-4 text-light font-weight-bold">Mihaela Pinzaru</h1>
-  		<p className="lead text-light">Software Developer
+  		<p className="lead text-light">Princess of Sarcasmistan
   		</p>
   		<hr className="my-4"/>
-  		<p className="text-light">...and more
+  		<p className="text-light">...and lady of Fukk Antivaxx
   		</p>
   		
 		  
