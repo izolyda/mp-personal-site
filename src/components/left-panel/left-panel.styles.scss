@@ -1,5 +1,6 @@
 .left-panel{
 	width: 256px;
+  max-width: 480px;
 	position: fixed;
 	margin-top: 60px;
 	left: 0px;
@@ -44,10 +45,13 @@
 
     &:hover{
       .button-wrapper{
-       
-        opacity:  1;
-        
+        opacity:  1; 
+        z-index: 2;
      }
+      .image {
+        opacity: 0.3;
+      }
+
   }
 
 }
@@ -64,13 +68,15 @@
   max-width: 128px;
   max-height: 128px;
   object-fit: cover;
+  transition: opacity 0.2s ease-in;
+  opacity: 1;
 }
 
 .button-wrapper{
   opacity: 0;
   display: flex;
   position: absolute;
-  transition: opacity 0.2s ease-out;
+  transition: opacity 0.2s ease-in;
 
   .button:nth-child(1){
     margin-right: 1rem;

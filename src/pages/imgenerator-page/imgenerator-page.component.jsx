@@ -6,14 +6,15 @@ import Footer from '../../components/footer/footer.component.jsx';
 
 import LeftPanel from '../../components/left-panel/left-panel.component.jsx';
 
-
+import Generator from '../../components/generator/generator.component.jsx';
 
 class ImgeneratorPage extends React.Component {
 	render()
 	{
 		return(
-			<div>
+			<div className="generator-page-container">
 				<LeftPanel/>
+				<Generator/>
 			</div>
 			
 		);
