@@ -19,6 +19,7 @@
     "axios": "^0.21.4",
     "babel-preset-react": "^6.24.1",
     "bootstrap": "^4.6.0",
+    "http-proxy-middleware": "^2.0.1",
     "jquery": "^3.6.0",
     "package.json": "^2.0.1",
     "popper.js": "^1.16.1",
@@ -47,12 +48,16 @@
     "workbox-strategies": "^5.1.4",
     "workbox-streams": "^5.1.4"
   },
+
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+
+"proxy": "http://localhost:8000",
+
   "eslintConfig": {
     "extends": [
       "react-app",

@@ -1,0 +1,241 @@
+  .right-side-panel{
+    position: absolute;
+    right: 0;
+    width: 256px;
+    max-width: 480px;
+    height: 100%;
+  
+
+    #right-flyout-wrapper{
+      position: absolute;
+      right:  0;
+      overflow: hidden;
+      width: 256px;
+      height: 100%;
+      background: black;
+
+    }
+
+
+    .right-panel-toggle{
+
+      width: 256px;
+      max-width: 480px;
+      margin-top: 66px;
+      height: 48px;
+    }
+
+    .right-toggle-btn{
+      position: absolute;
+      right: 0;
+      width: 256px;
+      height: 48px;
+      border: 0;
+      background: black;
+      color: white;
+      box-shadow: none;
+      border-radius: 0px;
+      display: flex;
+      justify-content: safe flex-end;
+      align-items: center;
+
+        &:hover{
+          color: rgba(75, 0, 130, 1);
+        }
+    }
+
+    .right-flyout{
+      width: 256px;
+      max-width: 480px;
+      position: absolute;
+      right: 0px;
+
+      transition: 1s;
+      background: gray;
+
+      top: -66px;
+     
+      overflow-y: hidden;
+      height: calc(100% - 66px);
+
+        @media screen and (min-width: 600px){
+          margin-top: 66px;
+        }
+    }
+
+  /*#right-flyout-wrapper:hover .right-flyout {
+      transition: 1s;
+      right: 0;
+  }*/
+
+    .element-list-container{
+      min-width: 240px;
+      width: 100%;
+      max-width: 480px;
+      padding: 10px;
+      background: black;
+      height: 100%;
+      overflow-y: auto;
+    }
+
+    .element-list-container>*
+    {
+      width: 100%;
+    }
+
+    .element-list{
+        display: flex;
+        flex-direction: column;
+        background: black;
+    }
+
+    .list-item {
+      display: flex;
+      flex-direction: row;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      position: relative;
+      align-items: center;
+      justify-content: center;
+      color: blueviolet;
+      margin-top: 120px;
+    }
+
+
+
+    .divider{
+      padding: .2em 0;
+
+      border-bottom: .5px solid rgb(128,128,128,0.5);
+
+    }
+
+  /*----------------DROP-DOWN------------------*/
+
+    li a {text-decoration : none; color : #2d2f31;}
+
+
+    .drop-down {
+      min-width: 220px;
+      max-width: 460px;
+
+      background: black;
+    }
+
+    .dropdown-expander-label {
+      min-width: 220px;
+      max-width: 460px;
+
+      padding : 10px;
+      background : #a88dbb;
+      color : white;
+      font-size : 1.2em;
+      font-variant : small-caps;
+      cursor : pointer;
+      display: block;
+    }
+
+    .dropdown-expander-label::after {
+      float: right;
+      right: 10%;
+      content: "+";
+    }
+
+    .slide {
+      clear:both;
+      width:100%;
+      height:0px;
+      overflow: hidden;
+      text-align: center;
+      transition: height .4s ease;
+
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    ul{
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .dropdown-name-label{
+      margin-left: 20px;
+      font-variant : small-caps;
+      color: #a88dbb;
+    }
+
+    .dropdown-checkbox{
+      /* Double-sized Checkboxes */
+      -ms-transform: scale(2); /* IE */
+      -moz-transform: scale(2); /* FF */
+      -webkit-transform: scale(2); /* Safari and Chrome */
+      -o-transform: scale(2); /* Opera */
+      transform: scale(2);
+      padding: 10px;
+    }
+
+
+    .slide li {padding : 30px;}
+
+    #touch {position: absolute; opacity: 0; height: 0px;}    
+
+    #touch:checked + .slide {height: 200px;} 
+
+
+    .slideN {
+      clear:both;
+      width:100%;
+      height:0px;
+      overflow: hidden;
+      text-align: center;
+      transition: height .4s ease;
+
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .slideN li {padding : 30px;}
+
+    #touchN {position: absolute; opacity: 0; height: 0px;}    
+    #touchN:checked + .slideN {height: 300px;} 
+
+    /*---------VALUE SLIDERS--------*/
+    .slider{
+      position: absolute;
+      margin-top: 20px;
+    }
+
+    .slider-label-text{
+      font-variant : small-caps;
+    }
+
+    .range-value{
+      position: relative;
+      display: block;
+      text-align: center;
+      font-size: 2em;
+      color: #black;
+      font-weight: 400;
+      margin-top: 10px;
+    }
+
+    .range-input{
+      width: 200px;
+      height: 15px;
+      -webkit-appearance: none;
+      background: #111;
+      outline: none;
+      border-radius: 5px;
+      overflow: hidden;
+      box-shadow: inset 0 0 5px rgba(0, 0, 0, 1);
+    }
+
+
+  }
+
+
+
+  
