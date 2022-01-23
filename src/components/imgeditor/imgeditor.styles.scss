@@ -1,0 +1,31 @@
+.editor{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgb(30,30,30);
+  margin: 5px;
+  position: relative;
+  z-index: 1;
+}
+
+.editor-hidden{
+  display: none;
+}
+
+.close-editor-btn-wrapper{
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  margin: 20px 20px;
+  background: rgb(30,30,30);;
+}
+
+.tui-image-editor-header-logo{
+  display: none;
+}
+
+.tui-image-editor-container .tui-image-editor-header-buttons > div:first-child{
+  display: none;
+}

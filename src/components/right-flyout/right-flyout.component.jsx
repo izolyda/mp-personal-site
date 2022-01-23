@@ -6,20 +6,16 @@ import {faCogs} from '@fortawesome/free-solid-svg-icons';
 import {connect} from 'react-redux';
 import {setNetwork, setSeed, setTruncation, setNoise} from '../../redux/modelparameters/modelparameters.actions.js';
 
+import {expandRight} from '../../redux/collapsible/collapsible.actions.js';
+
 const element = <FontAwesomeIcon icon={faCogs}/>;
 
 
 class RightFlyout extends React.Component {
 
     toggleRightMenu = () => {
-        console.log("In the right clicker");
-        let element = document.getElementById('rightToggleBtn');
-        let btnWraper = element.closest('div');
-        let panelWrapper = btnWraper.nextElementSibling;
-        let target = panelWrapper.firstChild;
 
-        target.style.right = (target.style.right === "-256px") ? "0px" : "-256px";
-
+        this.props.expandRight(!this.props.expandedRight);
     };
 
     setSeedValue = (event) => {
@@ -118,12 +114,12 @@ class RightFlyout extends React.Component {
 
     render() {
         return (
-            <div className="right-side-panel">
+            <div className={`right-side-panel ${this.props.expandedRight? "right-side-panel-expanded" : ""}`}>
                 <div className="right-panel-toggle">
                     <button className="right-toggle-btn" id="rightToggleBtn"
                             onClick={this.toggleRightMenu}>{element}</button>
                 </div>
-                <div id="right-flyout-wrapper">
+
                     <div className="right-flyout">
                         <div className="element-list-container">
                             <div className="element-list">
@@ -209,7 +205,7 @@ class RightFlyout extends React.Component {
                             </div>
                         </div>
                     </div>
-                </div>
+
             </div>
         );
     }
@@ -220,13 +216,17 @@ const mapStateToProps = state => ({
     seedSelected: state.modelparameters.seedSelected,
     truncationSelected: state.modelparameters.truncationSelected,
     noiseSelected: state.modelparameters.noiseSelected,
+
+    expandedRight: state.collapsible.expandedRight,
 });
 
 const mapDispatchToProps = dispatch => ({
     setNetwork: network => dispatch(setNetwork(network)),
     setSeed: seed => dispatch(setSeed(seed)),
     setTruncation: truncation => dispatch(setTruncation(truncation)),
-    setNoise: noise => dispatch(setNoise(noise))
+    setNoise: noise => dispatch(setNoise(noise)),
+
+    expandRight: collapsible => dispatch(expandRight(collapsible)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(RightFlyout);

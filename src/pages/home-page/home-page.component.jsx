@@ -10,9 +10,9 @@ import AlternateTimeline from '../../components/timeline/timeline.component.jsx'
 
 const HomePage = () => (
 	<div>
-			<div>
+
 				<Jumbotron/>
-			</div>
+
 			<div>
 				<Technologies/>
 			</div>

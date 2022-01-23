@@ -10,9 +10,28 @@
 }
 
 .jumbotron{
+	position: relative;
     top:0;
-    width: 100%;
-    height: 30rem;
-	background-image: linear-gradient(to right, rgba(75, 0, 130, 1), rgba(75, 0, 130, .2));
+	left: 0;
+    width: 100vw;
+    height: 30vh;
 	z-index: -1;
+	overflow: hidden;
+	background-image: url("../../assets/images/neurons2.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+
+}
+
+
+.profile-pic-container{
+	position: relative;
+	z-index: 2;
+	top: 100px;
+}
+
+.profile-description{
+	display: inline;
+	position: relative;
+	left: 200px;
 }

@@ -2,25 +2,13 @@ import React from 'react';
 import axios from 'axios';
 import './generator.styles.scss';
 import ResultImage from './result-image.component.jsx';
+import ImgEditor from '../imgeditor/imgeditor.component.jsx';
 
 import {connect} from 'react-redux';
-import {setImage} from '../../redux/images/images.actions.js';
+import {setImage, setCurrentImage} from '../../redux/images/images.actions.js';
 
-
-// function Generator({networkSelected, seedSelected, noiseSelected, truncationSelected}){
-
-//const Generator = ({networkSelected, seedSelected, noiseSelected, truncationSelected}) => {
 
 class Generator extends React.Component {
-    // constructor(props) {
-    //    super(props);
-
-    //    this.state = {
-    //    	images: [],
-    // 	}
-
-    // 	this.fetchImages = this.fetchImages.bind(this);
-    //  }
 
     fetchImages = (network, seed, noise, truncation, class_idx) => {
 
@@ -48,6 +36,7 @@ class Generator extends React.Component {
 
                     console.log("Inside axios response:" + image);
 
+                    this.props.setCurrentImage(image);
                     this.props.setImage(image);
 
                 }
@@ -59,34 +48,29 @@ class Generator extends React.Component {
     };
 
     render() {
+
+
+
         return (
-            <div className="main-container">
-                {/*<p>{ this.props.networkSelected }</p>
-					<p>{ this.props.seedSelected }</p>
-					<p>{ this.props.truncationSelected }</p>
-					<p>{ this.props.noiseSelected }</p>*/}
-                <div className="btn-wrapper">
-                    <button type="button" className="get-image-button shrink-border"
-                            onClick={() => this.fetchImages(this.props.networkSelected, parseInt(this.props.seedSelected), this.props.noiseSelected, parseFloat(this.props.truncationSelected), this.props.class_idx_Selected)}>GENERATE
-                    </button>
-                </div>
-                <div id="scratchpad" className="main-working-area">
+            <div className = {`main-container ${(this.props.expandedLeft && this.props.expandedRight) ? "main-container-shrinked-both" : ""} 
+                                              ${(this.props.expandedLeft || this.props.expandedRight) ? "main-container-shrinked-oneside" : ""}`}>
+                <div className="main-container-body">
+                    <div className="btn-wrapper">
+                        <button type="button" className="get-image-button"
+                                onClick={() => this.fetchImages(this.props.networkSelected, parseInt(this.props.seedSelected), this.props.noiseSelected, parseFloat(this.props.truncationSelected), this.props.class_idx_Selected)}>GENERATE</button>
+                    </div>
+                    <div className="main-working-area">
 
-                    <div className="result-img-container" id="generatedImageContainer">
-                        <ResultImage src={this.props.images[0]}/>
+                        <div className="result-img-container" id="generatedImageContainer" >
 
-                        {/*{this.props.images.map(img => (
-							      
-							      	<ResultImage src={ img } />
+                            <ResultImage src={this.props.currentImage} />
+                            <ImgEditor key={this.props.currentIdx} />
+                        </div>
 
-							      ) )}*/}
 
                     </div>
-
-
                 </div>
             </div>
-
         )
     };
 };
@@ -100,10 +84,17 @@ const mapStateToProps = state => ({
     class_idx_Selected: state.modelparameters.class_idx,
 
     images: state.image.images,
+    currentImage: state.image.currentImage,
+    imagePreview: state.image.imagePreview,
+    currentIdx: state.image.currentIdx,
+
+    expandedLeft: state.collapsible.expandedLeft,
+    expandedRight: state.collapsible.expandedRight,
 });
 
 const mapDispatchToProps = dispatch => ({
     setImage: image => dispatch(setImage(image)),
+    setCurrentImage: image => dispatch(setCurrentImage(image)),
 });
 
 

@@ -1,28 +1,24 @@
   .right-side-panel{
     position: absolute;
-    right: 0;
+    right: -256px;
     width: 256px;
-    max-width: 480px;
     height: 100%;
-  
-
-    #right-flyout-wrapper{
-      position: absolute;
-      right:  0;
-      overflow: hidden;
-      width: 256px;
-      height: 100%;
-      background: black;
-
-    }
+    top: 66px;
+    transition: 1s right ease;
 
 
     .right-panel-toggle{
 
       width: 256px;
       max-width: 480px;
-      margin-top: 66px;
+      margin-top: 0;
       height: 48px;
+      position: relative;
+      right: 48px;
+      background: rgb(10,10,10);
+      transition: 1s;
+
+      margin-right: 0px;
     }
 
     .right-toggle-btn{
@@ -31,16 +27,17 @@
       width: 256px;
       height: 48px;
       border: 0;
-      background: black;
+      background: rgb(10,10,10);
       color: white;
       box-shadow: none;
       border-radius: 0px;
       display: flex;
-      justify-content: safe flex-end;
+      justify-content: safe flex-start;
       align-items: center;
+      z-index: 1;
 
         &:hover{
-          color: rgba(75, 0, 130, 1);
+          color: rgba(102,39,149, 1);
         }
     }
 
@@ -49,6 +46,7 @@
       max-width: 480px;
       position: absolute;
       right: 0px;
+      margin-right: 0;
 
       transition: 1s;
       background: gray;
@@ -63,17 +61,13 @@
         }
     }
 
-  /*#right-flyout-wrapper:hover .right-flyout {
-      transition: 1s;
-      right: 0;
-  }*/
 
     .element-list-container{
       min-width: 240px;
       width: 100%;
       max-width: 480px;
       padding: 10px;
-      background: black;
+      background: rgb(10,10,10);
       height: 100%;
       overflow-y: auto;
     }
@@ -86,7 +80,7 @@
     .element-list{
         display: flex;
         flex-direction: column;
-        background: black;
+        background: rgb(10,10,10);
     }
 
     .list-item {
@@ -97,7 +91,7 @@
       position: relative;
       align-items: center;
       justify-content: center;
-      color: blueviolet;
+      color: rgb(189,161,209);
       margin-top: 120px;
     }
 
@@ -119,7 +113,7 @@
       min-width: 220px;
       max-width: 460px;
 
-      background: black;
+      background: rgb(10,10,10);
     }
 
     .dropdown-expander-label {
@@ -127,7 +121,7 @@
       max-width: 460px;
 
       padding : 10px;
-      background : #a88dbb;
+      background : rgb(102,39,149);
       color : white;
       font-size : 1.2em;
       font-variant : small-caps;
@@ -163,7 +157,7 @@
     .dropdown-name-label{
       margin-left: 20px;
       font-variant : small-caps;
-      color: #a88dbb;
+      color: rgb(189,161,209);
     }
 
     .dropdown-checkbox{
@@ -217,7 +211,7 @@
       display: block;
       text-align: center;
       font-size: 2em;
-      color: #black;
+      color: black;
       font-weight: 400;
       margin-top: 10px;
     }
@@ -234,6 +228,12 @@
     }
 
 
+  }
+
+  .right-side-panel-expanded {
+    position: absolute;
+    right: 0;
+    transition: 1s right ease;
   }
 
 

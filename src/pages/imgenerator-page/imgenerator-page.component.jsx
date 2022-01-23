@@ -14,10 +14,9 @@ class ImgeneratorPage extends React.Component {
 	{
 		return(
 			<div className="generator-page-container">
-				<LeftPanel/>			
+				<LeftPanel/>
 				<RightFlyout/>
 				<Generator/>
-
 			</div>
 			
 		);
