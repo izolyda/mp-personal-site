@@ -37,7 +37,7 @@
       z-index: 1;
 
         &:hover{
-          color: rgba(102,39,149, 1);
+        color: rgba(32, 249, 241, 0.5);
         }
     }
 
@@ -91,7 +91,7 @@
       position: relative;
       align-items: center;
       justify-content: center;
-      color: rgb(189,161,209);
+      color: rgba(32, 249, 241, 0.5);
       margin-top: 120px;
     }
 
@@ -121,7 +121,7 @@
       max-width: 460px;
 
       padding : 10px;
-      background : rgb(102,39,149);
+      background: rgba(32, 249, 241, 0.5);
       color : white;
       font-size : 1.2em;
       font-variant : small-caps;
@@ -157,7 +157,7 @@
     .dropdown-name-label{
       margin-left: 20px;
       font-variant : small-caps;
-      color: rgb(189,161,209);
+      color: rgba(32, 249, 241, 0.5);
     }
 
     .dropdown-checkbox{
@@ -211,7 +211,7 @@
       display: block;
       text-align: center;
       font-size: 2em;
-      color: black;
+      color: rgba(32, 249, 241, 0.5);
       font-weight: 400;
       margin-top: 10px;
     }

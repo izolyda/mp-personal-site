@@ -5,7 +5,7 @@ const INITIAL_STATE = {
 	currentImage: null,
 	currentIdx: null,
 	imageEditor: false,
-	imagePreview: true,
+	imagePreview: false,
 };
 
 const imagesReducer = (state=INITIAL_STATE, action) => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import './jumbotron.styles.scss';
 
-import profilePic from '../../assets/images/pic1.jpg';
+import profilePic from '../../assets/images/linked_profile.jpeg';
 
 import jumbotronBg from '../../assets/images/neurons.jpg';
 
@@ -16,10 +16,10 @@ const Jumbotron = () => {
 
 		<span className="profile-description">
 			<h1 className="display-4 text-light font-weight-bold">Mihaela Pinzaru</h1>
-			<p className="lead text-light">Princess of Sarcasmistan
+			<p className="lead text-light">Software Developer
 			</p>
 			<hr className="my-4"/>
-			<p className="text-light">...and lady of Fukk Antivaxx
+			<p className="text-light">...with a passion for all that's science
 			</p>
 		</span>
 

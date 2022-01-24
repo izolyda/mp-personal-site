@@ -39,11 +39,7 @@ class LeftPanel extends React.Component {
 					<div className="left-panel">
 						<div className="img-list-container scrollbar">
 							<div className="img-list">
-								{/*{imgPaths.map(e => 
-		               				 <LeftPanelItem
-		                				uri={e} 
-		                			/>
-		            			)}*/}
+
 		            			{
 		            				this.props.images.map((img, index) =>
 		            						<LeftPanelItem image={img} key={index} idx={index}/>

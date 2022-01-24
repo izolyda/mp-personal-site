@@ -42,7 +42,7 @@ class ImgEditor extends React.Component {
                         menu: ['filter', 'crop', 'flip', 'rotate', 'text', 'resize'],
                         initMenu: 'filter',
                         uiSize: {
-                            width: '2000px',
+                            width: '1600px',
                             height: '1000px',
                         },
                         menuBarPosition: 'bottom',

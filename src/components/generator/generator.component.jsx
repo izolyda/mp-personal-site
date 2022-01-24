@@ -5,7 +5,7 @@ import ResultImage from './result-image.component.jsx';
 import ImgEditor from '../imgeditor/imgeditor.component.jsx';
 
 import {connect} from 'react-redux';
-import {setImage, setCurrentImage} from '../../redux/images/images.actions.js';
+import {setImage, setCurrentImage, invokeImagePreview} from '../../redux/images/images.actions.js';
 
 
 class Generator extends React.Component {
@@ -38,6 +38,7 @@ class Generator extends React.Component {
 
                     this.props.setCurrentImage(image);
                     this.props.setImage(image);
+                    this.props.invokeImagePreview(true);
 
                 }
             )
@@ -52,7 +53,7 @@ class Generator extends React.Component {
 
 
         return (
-            <div className = {`main-container ${(this.props.expandedLeft && this.props.expandedRight) ? "main-container-shrinked-both" : ""} 
+            <div className = {`main-container scrollbar ${(this.props.expandedLeft && this.props.expandedRight) ? "main-container-shrinked-both" : ""} 
                                               ${(this.props.expandedLeft || this.props.expandedRight) ? "main-container-shrinked-oneside" : ""}`}>
                 <div className="main-container-body">
                     <div className="btn-wrapper">
@@ -95,6 +96,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
     setImage: image => dispatch(setImage(image)),
     setCurrentImage: image => dispatch(setCurrentImage(image)),
+    invokeImagePreview: imagePreview => dispatch(invokeImagePreview(imagePreview)),
 });
 
 

@@ -14,10 +14,10 @@
     top:0;
 	left: 0;
     width: 100vw;
-    height: 30vh;
+    height: 40vh;
 	z-index: -1;
 	overflow: hidden;
-	background-image: url("../../assets/images/neurons2.jpg");
+	background-image: url("../../assets/images/bg2.jpg");
 	background-repeat: no-repeat;
 	background-position: center;
 
@@ -34,4 +34,16 @@
 	display: inline;
 	position: relative;
 	left: 200px;
+	bottom: 60px;
+
+	@media (max-width: 375px){
+		left: 120px;
+		top: 15px;
+	}
+}
+
+@media (max-width: 600px) {
+	.display-4 {
+		font-size: 2rem;
+	}
 }

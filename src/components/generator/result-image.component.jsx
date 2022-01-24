@@ -9,11 +9,8 @@ class ResultImage extends React.Component {
 	render(){
 
 		return(
-				<div  className={`imgpreview${this.props.imagePreview ? "" : "-hidden"}`}>
-					<div className="imgpreview-placeholder">
-
-					</div>
-					 <img className="generated-image" src={this.props.src}></img>
+				<div  className={`${this.props.imagePreview? "imgpreview" : "imgpreview-placeholder"} `}>
+					 <img className={"generated-image"} src={this.props.src}/>
 				</div>
 			);
 

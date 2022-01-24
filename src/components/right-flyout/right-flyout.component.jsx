@@ -19,66 +19,14 @@ class RightFlyout extends React.Component {
     };
 
     setSeedValue = (event) => {
-        document.getElementById('seedRangeValue').innerHTML = event.target.value;
         this.props.setSeed(event.target.value);
 
     };
 
     setTruncValue = (event) => {
-        document.getElementById('truncRangeValue').innerHTML = event.target.value;
         this.props.setTruncation(event.target.value);
 
     };
-
-    handleNetworkSelection = (event) => {
-
-        let checkboxes = document.getElementsByName("network");
-        let network = "";
-
-            if(checkboxes[0].checked){
-                network = checkboxes[0].value;
-                checkboxes[1].checked = false;
-                this.props.setNetwork(network);
-            }
-            else if(checkboxes[1].checked) {
-                network = checkboxes[1].value;
-                checkboxes[0].checked = false;
-                this.props.setNetwork(network);
-            }
-            else {
-                network = 'universe';
-                this.props.setNetwork(network);
-            }
-    }
-
-    handleNoiseSelection = (event) => {
-
-        let checkboxes = document.getElementsByName("noise");
-        let noise = "";
-
-        if(checkboxes[0].checked){
-            noise = checkboxes[0].value;
-            checkboxes[1].checked = false;
-            checkboxes[2].checked = false;
-            this.props.setNoise(noise);
-        }
-        else if(checkboxes[1].checked) {
-            noise = checkboxes[1].value;
-            checkboxes[0].checked = false;
-            checkboxes[2].checked = false;
-            this.props.setNoise(noise);
-        }
-        else if(checkboxes[2].checked) {
-            noise = checkboxes[2].value;
-            checkboxes[0].checked = false;
-            checkboxes[1].checked = false;
-            this.props.setNoise(noise);
-        }
-        else {
-            noise = 'none';
-            this.props.setNoise(noise);
-        }
-    }
 
     handleKeyDownSeed = (event) => {
 
@@ -114,97 +62,97 @@ class RightFlyout extends React.Component {
 
     render() {
         return (
-            <div className={`right-side-panel ${this.props.expandedRight? "right-side-panel-expanded" : ""}`}>
+            <div className={`right-side-panel ${this.props.expandedRight ? "right-side-panel-expanded" : ""}`}>
                 <div className="right-panel-toggle">
                     <button className="right-toggle-btn" id="rightToggleBtn"
                             onClick={this.toggleRightMenu}>{element}</button>
                 </div>
 
-                    <div className="right-flyout">
-                        <div className="element-list-container">
-                            <div className="element-list">
+                <div className="right-flyout">
+                    <div className="element-list-container">
+                        <div className="element-list">
 
 
-                                <div className="list-item" key="1">
-                                    <div className="drop-down">
+                            <div className="list-item" key="1">
+                                <div className="drop-down">
 
-                                        <label htmlFor="touch"><span className="dropdown-expander-label">NETWORK</span></label>
-                                        <input type="checkbox" id="touch"/>
+                                    <label htmlFor="touch"><span
+                                        className="dropdown-expander-label">NETWORK</span></label>
+                                    <input type="checkbox" id="touch"/>
 
-                                        <ul className="slide">
-                                            <li>
-                                                <input type="checkbox" name="network" value="universe_generator" className="dropdown-checkbox"
-                                                       onChange={(e) => this.handleNetworkSelection(e)}/>
-                                                <label className="dropdown-name-label"> Universe </label>
+                                    <ul className="slide">
+                                        {
+                                            this.props.network_options.map((network, index) => (
+                                                <li key={index}>
+                                                    <input type="checkbox" name="network"
+                                                           value={network.value}
+                                                    className="dropdown-checkbox"
+                                                    onChange={() => this.props.setNetwork(network.value)}/>
+                                                    <label className="dropdown-name-label"> {network.name} </label>
+                                                </li>
+                                            ))
+                                        }
 
-                                            </li>
-                                            <li>
-                                                <input type="checkbox" name="network" value="backgrounds_generator" className="dropdown-checkbox"
-                                                       onChange={ (e)=> this.handleNetworkSelection(e)}/>
-                                                <label className="dropdown-name-label"> Backgrounds </label>
-
-                                            </li>
-                                        </ul>
-                                    </div>
+                                    </ul>
                                 </div>
-
-
-                                <div className="list-item" key="2">
-                                    <div className="slider">
-                                        <label className="slider-label-text">Seed:</label>
-                                        <div id="seedRangeValue" className="range-value">0</div>
-                                        <input id="seedRangeInput" className="range-input" type="range" min="0"
-                                               max="65536" onChange={(e) => this.setSeedValue(e)}
-                                               onKeyDown={this.handleKeyDownSeed}></input>
-                                    </div>
-                                </div>
-
-
-                                <div className="list-item" key="3">
-                                    <div className="slider">
-                                        <label className="slider-label-text">Truncation:</label>
-                                        <div id="truncRangeValue" className="range-value">0</div>
-                                        <input id="truncRangeInput" className="range-input" type="range" step="0.05"
-                                               min="0" max="1" onChange={(e) => this.setTruncValue(e)}
-                                               onKeyDown={this.handleKeyDownTruncation}></input>
-                                    </div>
-                                </div>
-
-
-                                <div className="list-item" key="4">
-                                    <div className="drop-down">
-
-                                        <label htmlFor="touchN"><span
-                                            className="dropdown-expander-label">NOISE</span></label>
-                                        <input type="checkbox" id="touchN"/>
-
-                                        <ul className="slideN">
-                                            <li>
-                                                <input type="checkbox" name="noise" value="none" className="dropdown-checkbox"
-                                                       onChange={(e) => this.handleNoiseSelection(e)}/>
-                                                <label className="dropdown-name-label"> None </label>
-
-                                            </li>
-                                            <li>
-                                                <input type="checkbox" name="noise" value="random" className="dropdown-checkbox"
-                                                       onChange={ (e) => this.handleNoiseSelection(e)}/>
-                                                <label className="dropdown-name-label"> Random </label>
-
-                                            </li>
-                                            <li>
-                                                <input type="checkbox" name="noise" value="const" className="dropdown-checkbox"
-                                                       onChange={ (e) => this.handleNoiseSelection(e)}/>
-                                                <label className="dropdown-name-label"> Const </label>
-
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-
                             </div>
+
+
+                            <div className="list-item" key="2">
+                                <div className="slider">
+                                    <label className="slider-label-text">Seed:</label>
+                                    <div id="seedRangeValue" className="range-value">{this.props.seedSelected}</div>
+                                    <input id="seedRangeInput" className="range-input" type="range"
+                                           min={this.props.seed_min_max[0]} max={this.props.seed_min_max[1]}
+                                           value={this.props.seedSelected}
+                                           onChange={(e) => this.setSeedValue(e)}
+                                           onKeyDown={this.handleKeyDownSeed}/>
+                                </div>
+                            </div>
+
+
+                            <div className="list-item" key="3">
+                                <div className="slider">
+                                    <label className="slider-label-text">Truncation:</label>
+                                    <div id="truncRangeValue" className="range-value">{this.props.truncationSelected}</div>
+                                    <input id="truncRangeInput" className="range-input" type="range"
+                                           step="0.05" min={this.props.trunc_min_max[0]} max={this.props.trunc_min_max[1]}
+                                           value={this.props.truncationSelected}
+                                           onChange={(e) => this.setTruncValue(e)}
+                                           onKeyDown={this.handleKeyDownTruncation}/>
+                                </div>
+                            </div>
+
+
+                            <div className="list-item" key="4">
+                                <div className="drop-down">
+
+                                    <label htmlFor="touchN"><span
+                                        className="dropdown-expander-label">NOISE</span></label>
+                                    <input type="checkbox" id="touchN"/>
+
+                                    <ul className="slideN">
+
+                                        {
+                                            this.props.noise_options.map((noise, index) => (
+                                                <li key={index}>
+                                                    <input type="checkbox" name="network"
+                                                           value={noise}
+                                                           className="dropdown-checkbox"
+                                                           onChange={() => this.props.setNoise(noise)}/>
+                                                    <label className="dropdown-name-label"> {noise} </label>
+                                                </li>
+                                            ))
+                                        }
+
+                                    </ul>
+                                </div>
+                            </div>
+
+
                         </div>
                     </div>
+                </div>
 
             </div>
         );
@@ -218,6 +166,12 @@ const mapStateToProps = state => ({
     noiseSelected: state.modelparameters.noiseSelected,
 
     expandedRight: state.collapsible.expandedRight,
+
+    network_options: state.networkmeta.network_options,
+    noise_options: state.networkmeta.noise_options,
+    trunc_min_max: state.networkmeta.trunc_min_max,
+    seed_min_max: state.networkmeta.seed_min_max,
+
 });
 
 const mapDispatchToProps = dispatch => ({
