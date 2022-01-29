@@ -9,8 +9,10 @@ import { connect } from 'react-redux';
 
 import {expandLeft} from '../../redux/collapsible/collapsible.actions.js';
 
+import defaultImage from '../../assets/images/imageplaceholder.png';
 
 const element = <FontAwesomeIcon icon={ faFilm } />;
+
 
 
 
@@ -40,12 +42,15 @@ class LeftPanel extends React.Component {
 						<div className="img-list-container scrollbar">
 							<div className="img-list">
 
-		            			{
+		            			{ this.props.images[0]
+									?
 		            				this.props.images.map((img, index) =>
 		            						<LeftPanelItem image={img} key={index} idx={index}/>
 		            					)
+									:
+									<LeftPanelItem image={defaultImage} key={"1"}/>
 		            			}
-					</div>
+							</div>
 						</div>
 					</div>
 

@@ -1,8 +1,8 @@
 import CollapsibleActionTypes from './collapsible.types.js';
 
 const INITIAL_STATE = {
-    expandedLeft: false,
-    expandedRight: false
+    expandedLeft: true,
+    expandedRight: true
 };
 
 const collapsibleReducer = (state=INITIAL_STATE, action) => {

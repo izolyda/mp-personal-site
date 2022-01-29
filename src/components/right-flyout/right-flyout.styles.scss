@@ -9,7 +9,7 @@
 
     .right-panel-toggle{
 
-      width: 256px;
+      width: 48px;
       max-width: 480px;
       margin-top: 0;
       height: 48px;
@@ -17,6 +17,7 @@
       right: 48px;
       background: rgb(10,10,10);
       transition: 1s;
+      border-bottom-left-radius: 50%;
 
       margin-right: 0px;
     }
@@ -24,17 +25,17 @@
     .right-toggle-btn{
       position: absolute;
       right: 0;
-      width: 256px;
+      width: 48px;
       height: 48px;
       border: 0;
       background: rgb(10,10,10);
       color: white;
       box-shadow: none;
-      border-radius: 0px;
       display: flex;
       justify-content: safe flex-start;
       align-items: center;
       z-index: 1;
+      border-bottom-left-radius: 50%;
 
         &:hover{
         color: rgba(32, 249, 241, 0.5);

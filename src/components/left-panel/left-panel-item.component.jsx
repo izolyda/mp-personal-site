@@ -37,10 +37,18 @@ class LeftPanelItem extends React.Component {
 					<div className="image-wrapper">
 						<img className="image" src={this.props.image}/>
 					</div>
-					<div className="button-wrapper">
-						<button type="button" className="btn btn-danger" onClick={() => this.invokeEditor()}>EDIT</button>
-						<button type="button" className="btn btn-success" onClick={() => this.downloadImage(this.props.image)}>DOWNLOAD</button>
-					</div>
+					{
+						this.props.images[0] ?
+							<div className="button-wrapper">
+								<button type="button" className="btn btn-danger" onClick={() => this.invokeEditor()}>EDIT</button>
+								<button type="button" className="btn btn-success" onClick={() => this.downloadImage(this.props.image)}>DOWNLOAD</button>
+							</div>
+							:
+							<div>
+
+							</div>
+					}
+
 				</div>
 				<div className="divider"/>
 			</div>
