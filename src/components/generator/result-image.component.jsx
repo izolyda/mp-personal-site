@@ -10,7 +10,7 @@ class ResultImage extends React.Component {
 
 		return(
 				<div  className={`${this.props.imagePreview? "imgpreview" : "imgpreview-placeholder"} `}>
-					 <img className={"generated-image"} src={this.props.src}/>
+					 <img className={`${this.props.currentImage[0] ? "generated-image generated-image-visible" : "generated-image"} `} src={this.props.src}/>
 				</div>
 			);
 
@@ -20,6 +20,7 @@ class ResultImage extends React.Component {
 const mapStateToProps = state => ({
 	imagePreview: state.image.imagePreview,
 	imageEditor: state.image.imageEditor,
+	currentImage: state.image.images,
 });
 
 

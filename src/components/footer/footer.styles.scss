@@ -1,9 +1,11 @@
+@import '../../theme.scss';
+
 .footer {
    display: flex;
    bottom:0;
    width:100%;
    height:6rem;   /* Height of the footer */
-   background: #286457;
+   background: map-get($theme-dark, theme-color);
    font-size: 1rem;
    color: white;
 }

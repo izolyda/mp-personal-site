@@ -62,7 +62,7 @@ class RightFlyout extends React.Component {
 
     render() {
         return (
-            <div className={`right-side-panel ${this.props.expandedRight ? "right-side-panel-expanded" : ""}`}>
+            <div className={`right-side-panel ${this.props.expandedRight ? "right-side-panel-expanded" : ""} `}>
                 <div className="right-panel-toggle">
                     <button className="right-toggle-btn" id="rightToggleBtn"
                             onClick={this.toggleRightMenu}>{element}</button>

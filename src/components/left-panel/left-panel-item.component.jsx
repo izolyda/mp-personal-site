@@ -35,7 +35,7 @@ class LeftPanelItem extends React.Component {
 			<div>
 				<div className="list-item">
 					<div className="image-wrapper">
-						<img className="image" src={this.props.image}/>
+						<img className={`${this.props.images[0] ? "image" : "placeholder-image"}`} src={this.props.image}/>
 					</div>
 					{
 						this.props.images[0] ?

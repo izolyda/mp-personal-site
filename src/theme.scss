@@ -1,0 +1,44 @@
+$theme-lite: (
+        "theme-color": #0972AE,
+        "background-primary": #C1CFDA,
+        "background-secondary": #878C8F,
+        "theme-secondary": #2180b9,
+        "dividers": #313335,
+        "custom-white": #F7F3E3,
+        "custom-black": #000000,
+);
+
+
+$theme-dark: (
+        "theme-color": #192A51,
+        "background-primary": #878C8F,
+        "background-secondary": #313335,
+        "theme-secondary": #26407D,
+        "dividers": #878C8F,
+        "custom-white": #F7F3E3,
+        "custom-black": #000000,
+
+);
+
+$bw:(
+        "custom-white": #F7F3E3,
+        "custom-black": #000000,
+);
+
+.theme-lite {
+  background: map-get($theme-lite, background-primary);
+  color: map-get($theme-lite, custom-black);
+}
+
+.theme-dark {
+  background: map-get($theme-dark, background-primary);
+  color: map-get($bw, custom-black);
+}
+
+
+
+
+
+
+
+

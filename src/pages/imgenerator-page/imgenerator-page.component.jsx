@@ -9,6 +9,7 @@ import RightFlyout from '../../components/right-flyout/right-flyout.component.js
 
 import Generator from '../../components/generator/generator.component.jsx';
 
+
 class ImgeneratorPage extends React.Component {
 	render()
 	{

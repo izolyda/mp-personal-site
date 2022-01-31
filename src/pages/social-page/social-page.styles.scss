@@ -1,0 +1,13 @@
+
+.grid-container {
+  margin-top: 66px;
+  display: grid;
+  grid-template-areas: ". content .";
+
+}
+
+.twitter-widget {
+  grid-area: content;
+  grid-row-gap: 20px;
+  justify-content: stretch;
+}

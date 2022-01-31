@@ -15,11 +15,10 @@
 	left: 0;
     width: 100vw;
     height: 40vh;
-	z-index: -1;
 	overflow: hidden;
-	background-image: url("../../assets/images/bg2.jpg");
+	object-fit: fill;
+	background-image: url("../../assets/images/neurons2.png");
 	background-repeat: no-repeat;
-	background-position: center;
 
 }
 

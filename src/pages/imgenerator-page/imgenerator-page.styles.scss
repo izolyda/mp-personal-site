@@ -1,3 +1,5 @@
+@import '../../theme.scss';
+
 .generator-page-container {
 	position: fixed;
 	width: 100%;
@@ -6,4 +8,16 @@
 	flex-direction: column;
 	align-items: start;
 	justify-content: center;
+}
+
+.theme-lite .generator-page-container{
+	background: map-get($theme-lite, background-primary);
+	color: map-get($theme-lite, custom-black);
+
+}
+
+.theme-dark .generator-page-container{
+	background: map-get($theme-dark, background-primary);
+	color: map-get($theme-dark, custom-black);
+
 }

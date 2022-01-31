@@ -1,33 +1,87 @@
-.navbar{
-	//background-image: linear-gradient(to right, rgba(75, 0, 130, 1), rgba(75, 0, 130, .2));
-
-	background: #286457;
+@import '../../theme.scss';
 
 
-	position:  absolute;
-	top: 0; left: 0; right: 0;
-	z-index: 10;
+	.navbar {
 
-	box-shadow: 1px 0 10px 0 black;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 10;
+
+		box-shadow: 1px 0 10px 0 black;
+
+	}
+
+.theme-dark .navbar{
+	background: map-get($theme-dark, theme-color);
+	color: map-get($bw, custom-white);
 }
 
-.navbar-brand{
-	color: white !important;
-	font-weight: bold;
+.theme-lite .navbar{
+	background: map-get($theme-lite, theme-color);
+	color: map-get($theme-lite, custom-white);
 }
 
-.logo{
-
-	height: 100%;
-	width: 50px;
-	padding: 10%;
-	-webkit-filter: invert(100%);
-			filter: invert(100%);
-			@media(max-width: 40rem){
-				visibility: hidden;
-			}
+.nav-link {
+	display: block;
+	padding: 0.5rem 1rem;
+		&:hover{
+			color: #c4becf !important;
+		}
 }
 
-.nav-item{
-    text-align: right;
+	.theme-dark .nav-link {
+		background: map-get($theme-dark, theme-color);
+		color: map-get($theme-dark, custom-white);
+	}
+
+	.theme-lite .nav-link {
+		background: map-get($theme-lite, theme-color);
+		color: map-get($theme-lite, custom-white);
+		font-weight: bold;
+	}
+
+.navbar-expand-lg {
+	flex-flow: row nowrap;
+	justify-content: flex-start;
 }
+
+	.navbar-brand {
+		color: map-get($bw, custom-white) !important;
+		font-weight: bold;
+	}
+
+	.logo {
+
+		height: 100%;
+		width: 50px;
+		padding: 10%;
+		-webkit-filter: invert(100%);
+		filter: invert(100%);
+		@media(max-width: 40rem) {
+			visibility: hidden;
+		}
+	}
+
+	.theme-lite-btn {
+		width: 30px;
+		height: 30px;
+		background: map-get($bw, custom-white);
+		border-radius: 50%;
+		border: none;
+		margin: 5px;
+	}
+
+	.theme-dark-btn {
+		width: 30px;
+		height: 30px;
+		background: map-get($bw, custom-black);
+		border-radius: 50%;
+		border: none;
+		margin: 5px;
+	}
+
+	.nav-item {
+		text-align: right;
+	}
