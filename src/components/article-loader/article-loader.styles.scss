@@ -1,0 +1,131 @@
+@import '../../theme.scss';
+
+.articles-grid{
+  display: grid;
+  grid-template-areas: ". content ."
+                        " . pages .";
+  width: 100vw;
+  height: 100vh;
+}
+
+.dataContainer{
+  grid-area: content;
+  overflow: hidden;
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 15px 10px;
+}
+
+.theme-lite .post{
+  background: map-get($theme-lite, custom-white);
+  color: map-get($theme-lite, custom-black);
+}
+.theme-dark .post{
+  background: map-get($theme-dark, custom-dkgray);
+  color: map-get($theme-lite, custom-white);
+}
+
+small {
+  border: 2px solid #777;
+  border-radius: 7px;
+  padding: 5px 12px;
+  color: #777;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-area: pages;
+}
+
+.paginationItem {
+
+
+  padding: 10px 15px;
+  border-radius: 50%;
+  height: 45px;
+  width: 45px;
+  position: relative;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.paginationItem span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.prev,
+.next {
+  border: none;
+  padding: 10px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+  margin: 0 10px;
+  cursor: pointer;
+  border-radius: 10%;
+}
+
+.theme-lite .prev,
+.next {
+  background: map-get($theme-lite, custom-white);
+  color: map-get($theme-lite, theme-color);
+}
+
+.theme-dark .prev,
+.next {
+  background: map-get($theme-dark, custom-white);
+  color: map-get($theme-dark, theme-color);
+}
+
+.theme-lite .prev.disabled,
+.next.disabled {
+  pointer-events: none;
+  box-shadow: none;
+  color: #ccc;
+}
+
+.theme-dark .prev.disabled,
+.next.disabled {
+  pointer-events: none;
+  box-shadow: none;
+  color: #ccc;
+}
+
+.theme-lite .paginationItem{
+  background: map-get($theme-lite, theme-color);
+  color: map-get($theme-lite, custom-white);
+  border: 1px solid map-get($theme-lite, custom-white);
+  &:hover{
+    opacity: 80%;
+  }
+  &.active{
+    border: 2px solid map-get($theme-lite, custom-black);
+    font-weight: bold;
+    pointer-events: none;
+  }
+}
+
+.theme-dark .paginationItem{
+  background: map-get($theme-dark, theme-color);
+  color: map-get($theme-dark, custom-white);
+  border: 1px solid map-get($theme-dark, custom-white);
+  &:hover{
+    opacity: 80%;
+  }
+  &.active{
+    border: 2px solid map-get($theme-dark, custom-black);
+    font-weight: bold;
+    pointer-events: none;
+  }
+}

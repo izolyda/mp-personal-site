@@ -1,9 +1,10 @@
 import React from 'react';
 import './about-page.styles.scss';
+import ArticleLoaderComponent from "../../components/article-loader/article-loader.component";
 
 const AboutPage = ({theme}) => (
-								<div>
-									<h1> ABOUT PAGE </h1>
+								<div className={"about-page-container"}>
+									<ArticleLoaderComponent/>
 								</div>
 );
 
