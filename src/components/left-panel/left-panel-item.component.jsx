@@ -11,9 +11,9 @@ import {
 
 
 class LeftPanelItem extends React.Component {
-	constructor(props){
-		super(props);
-	}
+	// constructor(props){
+	// 	super(props);
+	// }
 
 	downloadImage(imageURL){
 		var download = document.createElement('a');

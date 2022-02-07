@@ -21,10 +21,6 @@ class ImgEditor extends React.Component {
 
     render(){
 
-        const myTheme = {
-            // Theme object to extends default dark theme.
-        };
-
         return(
             <div className={`editor${this.props.imageEditor ? "" : "-hidden"}`}>
                 <div className="close-editor-btn-wrapper">

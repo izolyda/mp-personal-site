@@ -4,14 +4,10 @@ import TechnologyCard from '../technologycard/technologycard.component.jsx';
 
 import {technology} from '../technologycard/technology-cards-meta.js';
 
-import { Link } from 'react-router-dom';
-
-// import tilePic from '../../assets/images/react.png';
-
 const Technologies = () => {
 
-	let react = "React";
-	let aboutTech = "Lorem ipsum dolor sit amet"
+	// let react = "React";
+	// let aboutTech = "Lorem ipsum dolor sit amet"
 	
 	return(
 

@@ -1,5 +1,5 @@
 import './article-loader.styles.scss';
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 
 
 export default function Pagination({data, RenderComponent, title, pageLimit, dataLimit}) {

@@ -1,28 +1,20 @@
 import React from 'react';
 
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../../firebase";
+
 import { ReactComponent as Logo } from '../../assets/logo.svg';
 import { Link } from 'react-router-dom';
 import './navbar.styles.scss';
 
-import {connect} from 'react-redux';
+import { useDispatch } from "react-redux";
+
 import {setLite, setDark} from '../../redux/theme/theme.actions.js';
 
-class Navbar extends React.Component {
+function Navbar(){
 
-
-
-	render() {
-
-		const setDark = (event) => {
-			event.preventDefault();
-			this.props.setDark(false);
-		}
-
-		const setLite = (event) => {
-			event.preventDefault();
-			this.props.setLite(true);
-		}
-
+	const dispatch = useDispatch();
+	const [user] = useAuthState(auth);
 
 		return (
 
@@ -41,16 +33,29 @@ class Navbar extends React.Component {
 				</button>
 				<div className="collapse navbar-collapse" id="navbarNavAltMarkup">
 					<div className="navbar-nav ml-auto mr-0">
-						<Link className={"nav-item nav-link"}  to="/">Home <span
-							className="sr-only">(current)</span></Link>
-						<Link className={"nav-item nav-link"}  to="/about">Articles</Link>
+						<Link className={"nav-item nav-link"}  to="/articles">Articles</Link>
 						<Link className={"nav-item nav-link"}   to="/imgenerator">Image Generator</Link>
 						<Link className={"nav-item nav-link"}   to="/social">Social</Link>
 						<Link className={"nav-item nav-link"}   to="/contacts">Contacts</Link>
+						{
+							(user) ?
+								<Link className={"nav-item nav-link"}  to="/logout">Logout</Link>
+								:
+								<Link className={"nav-item nav-link"}  to="/login">Login</Link>
 
-						<button type="button" className={"theme-dark-btn"} onClick={(event) => setDark(event)}/>
+						}
 
-						<button type="button" className={"theme-lite-btn"} onClick={(event) => setLite(event)}/>
+
+						<button type="button" className={"theme-dark-btn"} onClick={() => dispatch(setDark(false))}/>
+
+						<button type="button" className={"theme-lite-btn"} onClick={() => dispatch(setLite(true))}/>
+
+						{
+							(user) ?
+								<Link className={"nav-item nav-link"}  to="/dashboard">Dashboard</Link>
+								:
+								<div/>
+						}
 
 					</div>
 				</div>
@@ -58,18 +63,9 @@ class Navbar extends React.Component {
 
 
 		)
-	};
+
 
 };
 
-const mapStateToProps = state => ({
-	theme: state.theme.lite,
-});
 
-const mapDispatchToProps = dispatch => ({
-	setDark: theme => dispatch(setDark(theme)),
-	setLite: theme => dispatch(setLite(theme)),
-});
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(Navbar);
+export default Navbar;

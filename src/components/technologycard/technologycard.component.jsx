@@ -1,9 +1,6 @@
 import React from 'react';
 import './technologycard.styles.scss';
 
-import { Link } from 'react-router-dom';
-
-
 class TechnologyCard extends React.Component {
 	
 	render(){
